@@ -1,0 +1,188 @@
+/* Importación de la fuente Poppins desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilo general del cuerpo */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #a8dadc, #ffb6b9); /* Degradado pastel de azul y rosa */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  color: #333;
+
+}
+
+/* Contenedor principal con un fondo blanco */
+.quiz-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  padding: 35px;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+}
+
+/* Encabezados */
+h1, h2 {
+  color: #ff6f61; 
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+}
+
+/* Formulario de preguntas */
+.question-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  
+
+}
+
+/* Estilo de las etiquetas de las preguntas */
+.question-form label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7f8c8d;
+  text-transform: capitalize;
+  
+}
+
+/* Estilo de los campos de entrada (input) */
+.question-form input {
+  padding: 12px;
+  border: 2px solid #b3cde0; 
+  border-radius: 12px;
+  font-size: 14px;
+  width: 100%;
+  max-width: 500px;
+  transition: border-color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por los inputs */
+.question-form input:hover,
+.question-form input:focus {
+  border-color: #f7a1c1; 
+  outline: none;
+}
+
+/* Estilo de los botones */
+button {
+  background: #f7a1c1; 
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  width: 100%;
+  max-width: 250px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  
+  
+}
+
+/* Estilo de los botones al hacer hover */
+button:hover {
+  background-color: #ff6f61; 
+}
+
+/* Contenedor para las respuestas */
+.answer-container {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  max-width: 70%;
+  margin: 10px 10px 10px 10px;
+  gap: 10px
+  
+}
+
+/* Contenedor de las opciones de respuestas */
+#options-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 25px;
+
+  
+}
+
+/* Estilo de cada opción en la lista */
+#options-list li {
+  padding: 12px;
+  margin: 8px 0;
+  background: #f2d1d1;
+  border: 2px solid #f7a1c1; 
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por las opciones */
+#options-list li:hover {
+  background-color: #f7a1c1;
+  transform: scale(1.05);
+}
+
+/* Estilo para la opción seleccionada */
+#options-list li.selected {
+  background-color: #a8dadc; 
+  color: white;
+  transform: scale(1.05);
+}
+
+/*"Corroborar Respuesta" y "Mezclar Opciones" */
+button#check-answer-btn,
+button#shuffle-options-btn {
+  background: #a8dadc; 
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 250px;
+  transition: all 0.3s ease;
+}
+
+/* Estilo de los botones al hacer hover */
+button#check-answer-btn:hover,
+button#shuffle-options-btn:hover {
+  background-color: #76b6b1; /* Azul más fuerte al hacer hover */
+}
+
+/* Estilo de los textos de la pregunta */
+#display-question {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Your Future :D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz Your Future :D</h1>
+
+    <!-- Formulario para agregar pregunta -->
+    <div class="question-form">
+        <label for="question">Question:</label>
+        <input type="text" id="question" placeholder="Write your question here" />
+      
+        <div class="answer-container">
+          <input type="text" id="answer1" placeholder="Answer 1" />
+          <input type="radio" name="correct-answer" id="correct-answer1" value="1" />
+        </div>
+      
+        <div class="answer-container">
+          <input type="text" id="answer2" placeholder="Answer 2" />
+          <input type="radio" name="correct-answer" id="correct-answer2" value="2" />
+        </div>
+      
+        <div class="answer-container">
+          <input type="text" id="answer3" placeholder="Answer 3" />
+          <input type="radio" name="correct-answer" id="correct-answer3" value="3" />
+        </div>
+      
+        <div class="answer-container">
+          <input type="text" id="answer4" placeholder="Answer 4" />
+          <input type="radio" name="correct-answer" id="correct-answer4" value="4" />
+        </div>
+      
+        <button id="add-question-btn">Add Question</button>
+      </div>
+      
+
+
+    <!-- Contenedor para mostrar la pregunta y opciones -->
+    <div class="quiz-display">
+      <h2 id="display-question"></h2>
+      <ul id="options-list"></ul>
+
+      <button id="check-answer-btn" disabled>Check Answer</button>
+      <button id="shuffle-options-btn" disabled>Shuffle Options</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
