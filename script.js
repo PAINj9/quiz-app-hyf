@@ -1,5 +1,28 @@
 // función para agregar una pregunta con respuestas
 document.getElementById("add-question-btn").addEventListener("click", function() {
+
+  // ESTO OCULTA LAS PREGUNTAS CUANDO TOCAS EL BOTON
+
+  document.getElementById("question-form").style.display = "none";
+
+   // Ocultar el formulario con una transición
+   const questionForm = document.getElementById("question-form");
+   questionForm.classList.add("hidden");
+ 
+   // Mostrar los botones y respuestas con una transición
+   const quizDisplay = document.querySelector(".quiz-display");
+   quizDisplay.classList.add("show");
+ 
+   // Mostrar los botones de Check Answer y Shuffle Options
+   document.getElementById("check-answer-btn").classList.remove("hidden");
+   document.getElementById("shuffle-options-btn").classList.remove("hidden");
+ 
+   // Iniciar la cuenta regresiva
+   startCountdown(10); // 10 segundos
+
+   
+
+  
   // obtener el texto de la pregunta y las respuestas
   const questionText = document.getElementById("question").value;
   const answer1 = document.getElementById("answer1").value;
@@ -102,3 +125,137 @@ document.getElementById("shuffle-options-btn").addEventListener("click", functio
     });
   });
 });
+
+  // RELLENAR RESPUESTAS AUTOMATICAMENTE
+  // RELLENAR RESPUESTAS AUTOMATICAMENTE
+  // RELLENAR RESPUESTAS AUTOMATICAMENTE
+  // RELLENAR RESPUESTAS AUTOMATICAMENTE
+
+
+  document.getElementById("fill-example-btn").addEventListener("click", function() {
+    const questions = [
+      {
+        question: "Cuánto es 2 + 2?",
+        answers: ["1", "2", "4", "50"],
+        correctAnswer: 2 
+      },
+      {
+        question: "Cuánto es 3 + 5?",
+        answers: ["6", "7", "8", "9"],
+        correctAnswer: 2
+      },
+      {
+        question: "Cuánto es 10 - 3?",
+        answers: ["5", "6", "7", "8"],
+        correctAnswer: 2 
+      },
+      {
+        question: "Who created this project?",
+        answers: ["?", "Juani<3", "?", "?"],
+        correctAnswer: 1 
+      }
+    ];
+  
+    // pregunta aleatoria
+    const randomIndex = Math.floor(Math.random() * questions.length);
+    const selectedQuestion = questions[randomIndex];
+  
+    //llenar la pregunta y respuestas
+    document.getElementById("question").value = selectedQuestion.question;
+    document.getElementById("answer1").value = selectedQuestion.answers[0];
+    document.getElementById("answer2").value = selectedQuestion.answers[1];
+    document.getElementById("answer3").value = selectedQuestion.answers[2];
+    document.getElementById("answer4").value = selectedQuestion.answers[3];
+  
+    // respuesta correcta
+    document.getElementById("correct-answer" + (selectedQuestion.correctAnswer + 1)).checked = true;
+  });
+  
+
+
+  // RECARGAR PAGINA
+  // RECARGAR PAGINA
+  // RECARGAR PAGINA
+
+document.getElementById("Restart").addEventListener("click", function() {
+  location.reload(); // Recarga la página
+});
+
+
+  //DESPUES DE TOCAR ADD QUESTION
+  //DESPUES DE TOCAR ADD QUESTION
+  //DESPUES DE TOCAR ADD QUESTION
+
+
+document.getElementById("add-question-btn").addEventListener("click", function() {
+  // Mostrar los botones al hacer clic en Add Question
+  document.getElementById("check-answer-btn").classList.remove("hidden");
+  document.getElementById("shuffle-options-btn").classList.remove("hidden");
+});
+
+
+  //CONTADOR
+  //CONTADOR
+  //CONTADOR
+
+  document.getElementById("add-question-btn").addEventListener("click", function() {
+    // Mostrar el temporizador y comenzar la cuenta regresiva
+    startCountdown(10); // 10 segundos
+  });
+  
+  function startCountdown(seconds) {
+    // Obtener el elemento para mostrar el temporizador
+    const countdownElement = document.getElementById("countdown");
+    let timeRemaining = seconds;
+  
+    // Mostrar el tiempo inicial
+    countdownElement.textContent = `Time left: ${timeRemaining} seconds`;
+  
+    // Crear un intervalo que actualiza cada segundo
+    const interval = setInterval(function() {
+      timeRemaining--; // Decrementar el tiempo restante
+      countdownElement.textContent = `Time left: ${timeRemaining} seconds`;
+  
+      // Detener la cuenta regresiva cuando llegue a 0
+      if (timeRemaining <= 0) {
+        clearInterval(interval);
+        countdownElement.textContent = "¡Time is over!";
+      }
+    }, 1000);
+  }
+  
+
+
+  // Función para solicitar el nombre al usuario Inspect, Application, Local Storage
+  // Inspect, Application, Local Storage
+  // Inspect, Application, Local Storage
+  // Inspect, Application, Local Storage
+
+function askUserName() {
+  let userName = prompt("Please enter your name:");
+
+  // Si el nombre existe en el Local Storage, pedir otro nombre
+  while (localStorage.getItem(userName)) {
+    userName = prompt("That name is already taken. Please choose another name:");
+  }
+
+  // Guardar el nombre en el Local Storage
+  localStorage.setItem(userName, true);
+
+  
+// Actualizar el mensaje de bienvenida
+document.querySelector('h1').textContent = `Welcome to Quiz Your Future, ${userName} :)`;
+
+
+  // Mostrar un mensaje de bienvenida
+  alert(`Welcome, ${userName}!`);
+}
+
+// Llamar a la función al cargar la página
+askUserName();
+
+
+
+
+
+
