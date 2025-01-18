@@ -3,53 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Your Future :D</title>
+  <link rel="icon" href="/images/quizyourfuture.ico" type="image/x-icon">
+
+  <title>Quiz Your Future</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="quiz-container">
-    <h1>Quiz Your Future :D</h1>
+    <h1>Quiz Your Future</h1>
+    <img src="/images/quizyourfuture.png" class="foto-chiquita">
 
-    <!-- Formulario para agregar pregunta -->
-    <div class="question-form">
-        <label for="question">Question:</label>
-        <input type="text" id="question" placeholder="Write your question here" />
-      
-        <div class="answer-container">
-          <input type="text" id="answer1" placeholder="Answer 1" />
-          <input type="radio" name="correct-answer" id="correct-answer1" value="1" />
+    <div class="question-form" id="question-form">
+      <label for="question">Write your question below :) </label>
+
+      <input type="text" id="question" placeholder="Write your question here" class="pregunta" />
+
+      <div class="answer-container">
+        <input type="text" id="answer1" placeholder="Answer 1" />
+        <div class="cntr">
+          <input type="radio" name="correct-answer" id="correct-answer1" value="1" class="hidden-xs-up" />
+          <label for="correct-answer1" class="cbx"></label>
         </div>
-      
-        <div class="answer-container">
-          <input type="text" id="answer2" placeholder="Answer 2" />
-          <input type="radio" name="correct-answer" id="correct-answer2" value="2" />
-        </div>
-      
-        <div class="answer-container">
-          <input type="text" id="answer3" placeholder="Answer 3" />
-          <input type="radio" name="correct-answer" id="correct-answer3" value="3" />
-        </div>
-      
-        <div class="answer-container">
-          <input type="text" id="answer4" placeholder="Answer 4" />
-          <input type="radio" name="correct-answer" id="correct-answer4" value="4" />
-        </div>
-      
-        <button id="add-question-btn">Add Question</button>
       </div>
-      
+
+      <div class="answer-container">
+        <input type="text" id="answer2" placeholder="Answer 2" />
+        <div class="cntr">
+          <input type="radio" name="correct-answer" id="correct-answer2" value="2" class="hidden-xs-up" />
+          <label for="correct-answer2" class="cbx"></label>
+        </div>
+      </div>
+
+      <div class="answer-container">
+        <input type="text" id="answer3" placeholder="Answer 3" />
+        <div class="cntr">
+          <input type="radio" name="correct-answer" id="correct-answer3" value="3" class="hidden-xs-up" />
+          <label for="correct-answer3" class="cbx"></label>
+        </div>
+      </div>
+
+      <div class="answer-container">
+        <input type="text" id="answer4" placeholder="Answer 4" />
+        <div class="cntr">
+          <input type="radio" name="correct-answer" id="correct-answer4" value="4" class="hidden-xs-up" />
+          <label for="correct-answer4" class="cbx"></label>
+        </div>
+      </div>
+
+      <button id="add-question-btn">Add Question</button>
+      <button id="fill-example-btn">Random Question</button>
+      <button id="Restart">Restart</button>
+
+    </div>
 
 
-    <!-- Contenedor para mostrar la pregunta y opciones -->
+
     <div class="quiz-display">
+      <p id="countdown"></p> <!-- cuenta regresiva -->
+
       <h2 id="display-question"></h2>
       <ul id="options-list"></ul>
 
-      <button id="check-answer-btn" disabled>Check Answer</button>
-      <button id="shuffle-options-btn" disabled>Shuffle Options</button>
+      <button id="check-answer-btn" class="hidden" disabled>Check Answer</button>
+      <button id="shuffle-options-btn" class="hidden" disabled>Shuffle Options</button>
+      <button id="Restart">Restart</button>
+     
+ 
     </div>
+    
   </div>
+  
 
   <script src="script.js"></script>
+  
 </body>
 </html>
