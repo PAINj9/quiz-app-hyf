@@ -212,17 +212,14 @@ button#shuffle-options-btn:hover {
   transform: rotate(45deg) scale(1);
 }
 
-.hidden {
-  display: none;
-}
 
 
 /* Añadir una transición suave a la visibilidad y opacidad */
 .quiz-display {
   opacity: 0;
-  visibility: hidden;
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
+
 
 .quiz-display.show {
   opacity: 1;
