@@ -20,12 +20,7 @@
   }
   
   askUserName();
-
   
-
-
-
-
 
 // función para agregar una pregunta con respuestas
 document.getElementById("add-question-btn").addEventListener("click", function () {
@@ -77,17 +72,7 @@ document.getElementById("add-question-btn").addEventListener("click", function (
   // mostrar la nueva pregunta en el contenedor
   document.getElementById("display-question").textContent = newQuestion.question; // muestra la pregunta que hiciste antes xD
 
-  // limpia opciones
-  const optionsList = document.getElementById("options-list");
-  optionsList.innerHTML = "";
 
-  newQuestion.answers.forEach((answer, index) => {
-    const li = document.createElement("li");
-    li.textContent = answer;
-    li.onclick = () => selectAnswer(index);  
-    if (index + 1 == newQuestion.correctAnswer) li.dataset.correct = true;
-    optionsList.appendChild(li);
-  });
   
 
   // habilita botones
@@ -137,31 +122,43 @@ document.getElementById("check-answer-btn").addEventListener("click", function (
 });
 
 
-// mezclar las opciones
 document.getElementById("shuffle-options-btn").addEventListener("click", function () {
   const optionsList = document.getElementById("options-list");
-  const listItems = Array.from(optionsList.children);
+  const listItems = optionsList.children; 
 
-  listItems.sort(() => Math.random() - 0.5);
+  const itemsArray = [];
+  for (let i = 0; i < listItems.length; i++) {
+    itemsArray.push(listItems[i]);
+  }
+
+  itemsArray.sort(function () {
+    return Math.random() - 0.5;
+  });
 
   optionsList.innerHTML = "";
-  listItems.forEach((item) => optionsList.appendChild(item));
+  for (let i = 0; i < itemsArray.length; i++) {
+    optionsList.appendChild(itemsArray[i]);
+  }
 
-  listItems.forEach((item, index) => {
-    item.addEventListener("click", function () {
-      selectAnswer(index);
+  for (let i = 0; i < itemsArray.length; i++) {
+    itemsArray[i].addEventListener("click", function () {
+      selectAnswer(i);
     });
-  });
+  }
 });
 
+
 // RECARGAR PAGINA
 // RECARGAR PAGINA
 // RECARGAR PAGINA
-document.querySelectorAll(".restart-btn").forEach((button) => {
-  button.addEventListener("click", function () {
+const restartButtons = document.querySelectorAll(".restart-btn");
+
+for (let i = 0; i < restartButtons.length; i++) {
+  restartButtons[i].addEventListener("click", function () {
     location.reload(); // Recarga la página
   });
-});
+}
+
 
 // CONTADOR
 // CONTADOR
@@ -193,8 +190,14 @@ function stopCountdown() {
 }
 
 
+  // limpia opciones
+  const optionsList = document.getElementById("options-list");
+  optionsList.innerHTML = "";
 
-
-
-
-
+  newQuestion.answers.forEach((answer, index) => {
+    const li = document.createElement("li");
+    li.textContent = answer;
+    li.onclick = () => selectAnswer(index);  
+    if (index + 1 == newQuestion.correctAnswer) li.dataset.correct = true;
+    optionsList.appendChild(li);
+  });
