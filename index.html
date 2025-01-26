@@ -21,7 +21,7 @@
       <div class="answer-container">
         <input type="text" id="answer1" placeholder="Answer 1" />
         <div class="cntr">
-          <input type="radio" name="correct-answer" id="correct-answer1" value="1" class="hidden-xs-up" />
+          <input type="radio" name="correct-answer" id="correct-answer1" value="1" />
           <label for="correct-answer1" class="cbx"></label>
         </div>
       </div>
@@ -29,7 +29,7 @@
       <div class="answer-container">
         <input type="text" id="answer2" placeholder="Answer 2" />
         <div class="cntr">
-          <input type="radio" name="correct-answer" id="correct-answer2" value="2" class="hidden-xs-up" />
+          <input type="radio" name="correct-answer" id="correct-answer2" value="2"  />
           <label for="correct-answer2" class="cbx"></label>
         </div>
       </div>
@@ -37,7 +37,7 @@
       <div class="answer-container">
         <input type="text" id="answer3" placeholder="Answer 3" />
         <div class="cntr">
-          <input type="radio" name="correct-answer" id="correct-answer3" value="3" class="hidden-xs-up" />
+          <input type="radio" name="correct-answer" id="correct-answer3" value="3"  />
           <label for="correct-answer3" class="cbx"></label>
         </div>
       </div>
@@ -45,15 +45,14 @@
       <div class="answer-container">
         <input type="text" id="answer4" placeholder="Answer 4" />
         <div class="cntr">
-          <input type="radio" name="correct-answer" id="correct-answer4" value="4" class="hidden-xs-up" />
+          <input type="radio" name="correct-answer" id="correct-answer4" value="4" />
           <label for="correct-answer4" class="cbx"></label>
         </div>
       </div>
 
       <button id="add-question-btn">Add Question</button>
       <button id="fill-example-btn">Random Question</button>
-      <button id="Restart">Restart</button>
-
+      <button class="restart-btn">Restart</button>
     </div>
 
 
@@ -64,17 +63,19 @@
       <h2 id="display-question"></h2>
       <ul id="options-list"></ul>
 
-      <button id="check-answer-btn" class="hidden" disabled>Check Answer</button>
-      <button id="shuffle-options-btn" class="hidden" disabled>Shuffle Options</button>
-      <button id="Restart">Restart</button>
-     
- 
+      <button id="check-answer-btn" disabled>Check Answers</button>
+      
+      <button id="shuffle-options-btn" disabled>Shuffle Options</button>
+
+      <button class="restart-btn">Restart</button>
+
     </div>
     
   </div>
   
 
   <script src="script.js"></script>
+  <script src="data.js"></script>
   
 </body>
 </html>
