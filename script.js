@@ -107,10 +107,16 @@ document.getElementById("add-question-btn").addEventListener("click", function (
 let selectedAnswer = null;
 function selectAnswer(answerId) {
   const listItems = document.querySelectorAll("#options-list li");
-  listItems.forEach((item) => item.classList.remove("selected"));
+
+  for (let i = 0; i < listItems.length; i++) {
+    listItems[i].classList.remove("selected");
+  }
+
   selectedAnswer = answerId;
+
   listItems[answerId].classList.add("selected");
 }
+
 
 // Verificar la respuesta
 
