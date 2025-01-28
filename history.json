@@ -1,0 +1,22 @@
+[
+    {
+        "question": "Who was the first president of the United States?",
+        "answers": ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"],
+        "correctAnswer": 1
+    },
+    {
+        "question": "In which year did World War II end?",
+        "answers": ["1945", "1939", "1942", "1950"],
+        "correctAnswer": 0
+    },
+    {
+        "question": "Which empire built the Colosseum?",
+        "answers": ["Greek", "Roman", "Byzantine", "Ottoman"],
+        "correctAnswer": 1
+    },
+    {
+        "question": "Who discovered America in 1492?",
+        "answers": ["Vasco da Gama", "Christopher Columbus", "Marco Polo", "Ferdinand Magellan"],
+        "correctAnswer": 1
+    }
+]

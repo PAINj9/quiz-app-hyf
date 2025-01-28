@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is the chemical symbol for water?",
+        "answers": ["O2", "H2O", "CO2", "HO"],
+        "correctAnswer": 1
+    },
+    {
+        "question": "What planet is known as the Red Planet?",
+        "answers": ["Mars", "Venus", "Jupiter", "Saturn"],
+        "correctAnswer": 0
+    },
+    {
+        "question": "What gas do plants absorb from the atmosphere?",
+        "answers": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Helium"],
+        "correctAnswer": 1
+    },
+    {
+        "question": "What is the hardest natural substance on Earth?",
+        "answers": ["Gold", "Iron", "Diamond", "Quartz"],
+        "correctAnswer": 2
+    }
+]

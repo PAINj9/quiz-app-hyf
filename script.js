@@ -27,6 +27,52 @@
 // función para agregar una pregunta con respuestas
 document.getElementById("add-question-btn").addEventListener("click", function() {
 
+
+
+  
+// Función para cargar las preguntas según el archivo JSON correspondiente
+function loadQuestions(jsonUrl) {
+  fetch(jsonUrl)
+    .then(response => response.json())
+    .then(questions => {
+      // Asignar evento al formulario
+      document.getElementById("fill-example-btn").addEventListener("click", function () {
+        // Pregunta aleatoria
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        const selectedQuestion = questions[randomIndex];
+
+        // Rellenar el formulario
+        document.getElementById("question").value = selectedQuestion.question;
+        document.getElementById("answer1").value = selectedQuestion.answers[0];
+        document.getElementById("answer2").value = selectedQuestion.answers[1];
+        document.getElementById("answer3").value = selectedQuestion.answers[2];
+        document.getElementById("answer4").value = selectedQuestion.answers[3];
+
+        // Seleccionar la respuesta correcta
+        document.getElementById("correct-answer" + (selectedQuestion.correctAnswer + 1)).checked = true;
+      });
+    })
+    .catch(error => console.error("Error loading questions:", error));
+}
+
+// Asignar eventos a los botones
+document.getElementById("math-btn").addEventListener("click", () => {
+  loadQuestions('https://raw.githubusercontent.com/PAINj9/quiz-app-hyf/main/math.json');
+});
+
+document.getElementById("geography-btn").addEventListener("click", () => {
+  loadQuestions('https://raw.githubusercontent.com/PAINj9/quiz-app-hyf/main/geography.json');
+});
+
+document.getElementById("history-btn").addEventListener("click", () => {
+  loadQuestions('https://raw.githubusercontent.com/PAINj9/quiz-app-hyf/main/history.json');
+});
+
+document.getElementById("science-btn").addEventListener("click", () => {
+  loadQuestions('https://raw.githubusercontent.com/PAINj9/quiz-app-hyf/main/science.json');
+});
+
+
   // ESTO OCULTA LAS PREGUNTAS CUANDO TOCAS EL BOTON
 
   document.getElementById("question-form").style.display = "none";
