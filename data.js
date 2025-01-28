@@ -22,4 +22,3 @@ fetch('https://raw.githubusercontent.com/tu-usuario/mi-repositorio/main/question
       document.getElementById("correct-answer" + (selectedQuestion.correctAnswer + 1)).checked = true;
     });
   
-  .catch(error => console.error('Error cargando el JSON:', error));
