@@ -18,5 +18,107 @@
       "question": "Who created this project?",
       "answers": ["?", "Juani<3", "?", "?"],
       "correctAnswer": 1
+    },
+    {
+      "question": "6 × 7?",
+      "answers": ["36", "42", "48", "56"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "12 ÷ 4?",
+      "answers": ["2", "3", "4", "5"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "9 + 8?",
+      "answers": ["15", "16", "17", "18"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "25 - 7?",
+      "answers": ["17", "18", "19", "20"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "5²?",
+      "answers": ["20", "25", "30", "35"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "√49?",
+      "answers": ["5", "6", "7", "8"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "3³?",
+      "answers": ["9", "18", "27", "36"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "50 ÷ 5?",
+      "answers": ["8", "9", "10", "11"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "144 ÷ 12?",
+      "answers": ["10", "11", "12", "13"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "7 × 8?",
+      "answers": ["49", "54", "56", "64"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "15 + 27?",
+      "answers": ["40", "41", "42", "43"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "81 ÷ 9?",
+      "answers": ["8", "9", "10", "11"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "100 - 45?",
+      "answers": ["52", "54", "55", "57"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "2³?",
+      "answers": ["4", "6", "8", "10"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "5 × 9?",
+      "answers": ["40", "42", "45", "50"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "11 × 11?",
+      "answers": ["110", "121", "130", "140"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "√81?",
+      "answers": ["7", "8", "9", "10"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "16 ÷ 4?",
+      "answers": ["3", "4", "5", "6"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "20 + 37?",
+      "answers": ["55", "56", "57", "58"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What is π approximately?",
+      "answers": ["2.14", "3.14", "4.14", "5.14"],
+      "correctAnswer": 1
     }
+  
+  
   ]
