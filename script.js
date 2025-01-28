@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
   // // Función para solicitar el nombre al usuario Inspect, Application, Local Storage
   // // Inspect, Application, Local Storage
   // // Inspect, Application, Local Storage
@@ -24,8 +23,7 @@
   // askUserName();
 
   
-  
->>>>>>> Stashed changes
+
 // función para agregar una pregunta con respuestas
 document.getElementById("add-question-btn").addEventListener("click", function() {
 
