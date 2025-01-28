@@ -1,3 +1,31 @@
+<<<<<<< Updated upstream
+=======
+  // // Función para solicitar el nombre al usuario Inspect, Application, Local Storage
+  // // Inspect, Application, Local Storage
+  // // Inspect, Application, Local Storage
+
+
+  // function askUserName() {
+  //   let userName = prompt("Please enter your name:");
+  
+  //   // valido que no exista el nombre
+  //   while (localStorage.getItem(userName)) {
+  //     userName = prompt("That name is already taken. Please choose another name:");
+  //   }
+  
+  //   // lo guardo
+  //   localStorage.setItem(userName, true);
+  
+  //   document.querySelector('h1').textContent = "Welcome to Quiz Your Future, " + userName;
+  
+  //   alert("Welcome, " + userName);
+  // }
+  
+  // askUserName();
+
+  
+  
+>>>>>>> Stashed changes
 // función para agregar una pregunta con respuestas
 document.getElementById("add-question-btn").addEventListener("click", function() {
 
