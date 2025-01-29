@@ -1,26 +1,40 @@
+function askUserName() {
+  const modal = document.getElementById("user-modal");
+  const input = document.getElementById("user-name-input");
+  const button = document.getElementById("save-name-btn");
 
-  // // Función para solicitar el nombre al usuario Inspect, Application, Local Storage
-  // // Inspect, Application, Local Storage
-  // // Inspect, Application, Local Storage
+  modal.style.display = "flex";
+  setTimeout(() => modal.classList.add("show"), 50); 
+
+  button.addEventListener("click", function () {
+    let userName = input.value.trim();
+
+    if (userName === "") {
+      alert("Please enter a valid name.");
+      return;
+    }
+
+    localStorage.setItem("currentUser", userName);
+
+    let userData = JSON.parse(localStorage.getItem(userName));
+
+    if (!userData) {
+      userData = { score: 0 };
+      localStorage.setItem(userName, JSON.stringify(userData));
+    }
+
+    document.querySelector("h1").textContent =
+      `Welcome, ${userName} (Score: ${userData.score})`;
+
+    modal.classList.remove("show");
+    setTimeout(() => (modal.style.display = "none"), 400); 
+  });
+}
+
+window.onload = askUserName;
 
 
-  // function askUserName() {
-  //   let userName = prompt("Please enter your name:");
-  
-  //   // valido que no exista el nombre
-  //   while (localStorage.getItem(userName)) {
-  //     userName = prompt("That name is already taken. Please choose another name:");
-  //   }
-  
-  //   // lo guardo
-  //   localStorage.setItem(userName, true);
-  
-  //   document.querySelector('h1').textContent = "Welcome to Quiz Your Future, " + userName;
-  
-  //   alert("Welcome, " + userName);
-  // }
-  
-  // askUserName();
+
 
 // MATH BUTTON
 // MATH BUTTON
@@ -30,30 +44,28 @@
 
 document.getElementById('math-btn').addEventListener('click', async () => {
   try {
-    // Hacemos la solicitud para obtener las preguntas desde el archivo JSON
-    const respuesta = await fetch('https://raw.githubusercontent.com/PAINj9/quiz-app-hyf/refs/heads/main/math.json');
+    const respuesta = await fetch('https://raw.githubusercontent.com/PAINj9/quiz-app-hyf/refs/heads/main/math.json', {
+      cache: "no-store"
+    });
+
+
     
     if (!respuesta.ok) {
       throw new Error('No se pudo obtener las preguntas de Math');
     }
 
-    // Convertimos la respuesta en JSON
     const preguntas = await respuesta.json();
 
-    // Elegimos una pregunta al azar
     const preguntaAleatoria = preguntas[Math.floor(Math.random() * preguntas.length)];
 
-    // Llenamos la pregunta y respuestas
     document.getElementById('question').value = preguntaAleatoria.question;
     document.getElementById('answer1').value = preguntaAleatoria.answers[0];
     document.getElementById('answer2').value = preguntaAleatoria.answers[1];
     document.getElementById('answer3').value = preguntaAleatoria.answers[2];
     document.getElementById('answer4').value = preguntaAleatoria.answers[3];
 
-    // Desmarcar cualquier opción seleccionada antes
     document.querySelectorAll('input[name="correct-answer"]').forEach(input => input.checked = false);
 
-    // Marcar la respuesta correcta (sumando 1 porque los índices de array van de 0-3 pero los radio buttons son 1-4)
     const correctIndex = preguntaAleatoria.correctAnswer + 1;
     document.getElementById(`correct-answer${correctIndex}`).checked = true;
 
@@ -73,33 +85,26 @@ document.getElementById('math-btn').addEventListener('click', async () => {
 
 document.getElementById('geography-btn').addEventListener('click', async () => {
   try {
-    // Realizamos el fetch al archivo JSON
     const response = await fetch('https://raw.githubusercontent.com/PAINj9/quiz-app-hyf/refs/heads/main/geography.json');
     
     if (!response.ok) {
       throw new Error('No se pudo obtener las preguntas de Geography');
     }
 
-    // Parseamos la respuesta a JSON
     const questions = await response.json();
 
-    // Seleccionamos una pregunta aleatoria
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
 
-    // Llenamos el formulario con la pregunta y respuestas
     document.getElementById('question').value = randomQuestion.question;
     document.getElementById('answer1').value = randomQuestion.answers[0];
     document.getElementById('answer2').value = randomQuestion.answers[1];
     document.getElementById('answer3').value = randomQuestion.answers[2];
     document.getElementById('answer4').value = randomQuestion.answers[3];
 
-    // Desmarcar cualquier opción seleccionada antes
     document.querySelectorAll('input[name="correct-answer"]').forEach(input => input.checked = false);
 
-    // Ajustamos el índice de la respuesta correcta sumando 1
     const correctIndex = randomQuestion.correctAnswer + 1;
 
-    // Marcamos la respuesta correcta
     document.getElementById(`correct-answer${correctIndex}`).checked = true;
 
   } catch (error) {
@@ -117,33 +122,26 @@ document.getElementById('geography-btn').addEventListener('click', async () => {
 
 document.getElementById('history-btn').addEventListener('click', async () => {
   try {
-    // Realizamos el fetch al archivo JSON
     const response = await fetch('https://raw.githubusercontent.com/PAINj9/quiz-app-hyf/refs/heads/main/history.json');
     
     if (!response.ok) {
       throw new Error('No se pudo obtener las preguntas de History');
     }
 
-    // Parseamos la respuesta a JSON
     const questions = await response.json();
 
-    // Seleccionamos una pregunta aleatoria
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
 
-    // Llenamos el formulario con la pregunta y sus respuestas
     document.getElementById('question').value = randomQuestion.question;
     document.getElementById('answer1').value = randomQuestion.answers[0];
     document.getElementById('answer2').value = randomQuestion.answers[1];
     document.getElementById('answer3').value = randomQuestion.answers[2];
     document.getElementById('answer4').value = randomQuestion.answers[3];
 
-    // Desmarcar cualquier opción seleccionada antes
     document.querySelectorAll('input[name="correct-answer"]').forEach(input => input.checked = false);
 
-    // Ajustamos el índice de la respuesta correcta sumando 1
     const correctIndex = randomQuestion.correctAnswer + 1;
 
-    // Marcamos la respuesta correcta
     document.getElementById(`correct-answer${correctIndex}`).checked = true;
 
   } catch (error) {
@@ -161,33 +159,26 @@ document.getElementById('history-btn').addEventListener('click', async () => {
 
 document.getElementById('science-btn').addEventListener('click', async () => {
   try {
-    // Realizamos el fetch al archivo JSON
     const response = await fetch('https://raw.githubusercontent.com/PAINj9/quiz-app-hyf/refs/heads/main/science.json');
     
     if (!response.ok) {
       throw new Error('No se pudo obtener las preguntas de Science');
     }
 
-    // Convertimos la respuesta a JSON
     const questions = await response.json();
 
-    // Seleccionamos una pregunta aleatoria
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
 
-    // Llenamos el formulario con la pregunta y respuestas
     document.getElementById('question').value = randomQuestion.question;
     document.getElementById('answer1').value = randomQuestion.answers[0];
     document.getElementById('answer2').value = randomQuestion.answers[1];
     document.getElementById('answer3').value = randomQuestion.answers[2];
     document.getElementById('answer4').value = randomQuestion.answers[3];
 
-    // Desmarcar cualquier opción seleccionada antes
     document.querySelectorAll('input[name="correct-answer"]').forEach(input => input.checked = false);
 
-    // Ajustamos el índice de la respuesta correcta sumando 1
     const correctIndex = randomQuestion.correctAnswer + 1;
 
-    // Marcamos la respuesta correcta
     document.getElementById(`correct-answer${correctIndex}`).checked = true;
 
   } catch (error) {
@@ -205,15 +196,6 @@ document.getElementById('science-btn').addEventListener('click', async () => {
 
 
 document.getElementById("add-question-btn").addEventListener("click", function() {
-
-
-
-// JSON
-
-
-
-
-
 
 
 
@@ -352,11 +334,7 @@ function selectAnswer(answerId) {
 // CHECK ANSWER BUTTON
 // CHECK ANSWER BUTTON
 // CHECK ANSWER BUTTON
-
-
-
-// verificar la respuesta
-document.getElementById("check-answer-btn").addEventListener("click", function() {
+document.getElementById("check-answer-btn").addEventListener("click", function () {
   if (selectedAnswer === null) {
     alert("Please, select an answer");
     return;
@@ -364,12 +342,45 @@ document.getElementById("check-answer-btn").addEventListener("click", function()
 
   const correctAnswer = document.querySelector('li[data-correct="true"]');
 
+  // Verificar si la respuesta seleccionada es correcta
   if (selectedAnswer == Array.from(correctAnswer.parentNode.children).indexOf(correctAnswer)) {
-    alert("¡Correct Answer!");
+    // Mostrar el modal "Jugar de nuevo"
+    const modal = document.getElementById("play-again-modal");
+    modal.style.display = "flex";
+
+    // Obtener el nombre del usuario desde localStorage
+    let userName = localStorage.getItem("currentUser");
+
+    if (userName) {
+      // Obtener los datos del usuario o inicializarlo si es nuevo
+      let userData = JSON.parse(localStorage.getItem(userName)) || { score: 0 };
+
+      // Sumar un punto al score
+      userData.score++;
+
+      // Guardar los datos actualizados en localStorage
+      localStorage.setItem(userName, JSON.stringify(userData));
+    }
+
+    console.log("Correct Answer! Score updated.");
   } else {
-    alert("Wrong Answer. The correct answer was: " + correctAnswer.textContent);
+    // Mostrar el modal "Try Again"
+    const tryAgainModal = document.getElementById("try-again-modal");
+    tryAgainModal.style.display = "flex";
   }
 });
+
+// PLAY AGAIN BUTTON - Reinicia la página
+document.getElementById("play-again-btn").addEventListener("click", function () {
+  location.reload();
+});
+
+// TRY AGAIN BUTTON - Cierra el modal de "Try Again" y permite elegir otra respuesta
+document.getElementById("try-again-btn").addEventListener("click", function () {
+  const tryAgainModal = document.getElementById("try-again-modal");
+  tryAgainModal.style.display = "none";
+});
+
 
 
 // SHUFFLE OPTIONS BUTTON
@@ -413,16 +424,40 @@ document.querySelectorAll(".Restart").forEach(button => {
 
 
 
+function showNotification(message, type) {
+  const container = document.getElementById("notification-container");
+
+  // Crear el elemento de notificación
+  const notification = document.createElement("div");
+  notification.classList.add("notification", type, "show");
+
+  // Crear el mensaje
+  const messageSpan = document.createElement("span");
+  messageSpan.textContent = message;
+  notification.appendChild(messageSpan);
+
+  // Crear el botón de "Play Again"
+  const playAgainBtn = document.createElement("button");
+  playAgainBtn.textContent = "Play Again";
+  playAgainBtn.classList.add("play-again-btn");
+  playAgainBtn.addEventListener("click", function () {
+    location.reload();
+  });
+
+  notification.appendChild(playAgainBtn); // Agregar botón a la notificación
+  container.appendChild(notification);
+
+  // Ocultar la notificación después de 4 segundos
+  setTimeout(() => {
+    notification.classList.remove("show");
+    notification.classList.add("hide");
+
+    setTimeout(() => {
+      notification.remove();
+    }, 400);
+  }, 4000);
+}
 
 
  
-  
-
-
- 
-
-
-
-
-
 

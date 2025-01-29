@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/quizyourfuture.ico" type="image/x-icon">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <title>Quiz Your Future</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
+
+
+
+
   <div class="quiz-container">
     <h1>Quiz Your Future</h1>
     <img src="/images/quizyourfuture.png" class="foto-chiquita">
@@ -50,13 +56,16 @@
         </div>
       </div>
 
-      <button id="add-question-btn">Add Question</button>
-      <button id="math-btn">Math</button>
-      <button id="geography-btn">Geography</button>
-      <button id="history-btn">History</button>
-      <button id="science-btn">Science</button>
+      <button id="add-question-btn" class="btn-add-question">Add Question</button>
 
-      
+      <div class="question-buttons">
+
+      <button id="math-btn" class="btn-math">Math</button>
+      <button id="geography-btn" class="btn-geography">Geography</button>
+      <button id="history-btn" class="btn-history">History</button>
+      <button id="science-btn" class="btn-science">Science</button>
+
+      </div>
 
 
 
@@ -67,19 +76,51 @@
 
 
     <div class="quiz-display">
-      <p id="countdown"></p> <!-- cuenta regresiva -->
+      <p id="countdown"></p> 
 
       <h2 id="display-question"></h2>
       <ul id="options-list"></ul>
 
-      <button id="check-answer-btn" class="hidden" disabled>Check Answer</button>
-      <button id="shuffle-options-btn" class="hidden" disabled>Shuffle Options</button>
+      <div class="after-buttons">
+
+      <button id="check-answer-btn" class=  "btn-check-answer" >Check Answer</button>
+      <button id="shuffle-options-btn" class= "btn-shuffle-options" >Shuffle Options</button>
       <button class="Restart">Restart</button>
            
+      </div>
  
     </div>
     
   </div>
+  
+  <div id="user-modal" class="modal">
+    <div class="modal-content">
+      <h2>Enter Your Name</h2>
+      <input type="text" id="user-name-input" placeholder="Type your name..." />
+      <button id="save-name-btn">Submit</button>
+    </div>
+  </div>
+
+<!-- respuesta correcta -->
+<div id="play-again-modal" class="play-again-modal" style="display: none;">
+  <div class="play-again-content">
+    <h2>¡Correct Answer!</h2>
+    <button id="play-again-btn">Play Again</button>
+  </div>
+</div>
+
+<!-- respuesta incorrecta -->
+<div id="try-again-modal" class="play-again-modal" style="display: none;">
+  <div class="play-again-content">
+    <h2>Wrong Answer</h2>
+    <p>Try Again</p>
+    <button id="try-again-btn">Try Again</button>
+  </div>
+</div>
+
+  
+  
+  
   
 
   <script src="script.js"></script>
